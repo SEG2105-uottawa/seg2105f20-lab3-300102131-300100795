@@ -61,7 +61,7 @@ public class MainActivity extends AppCompatActivity {
     public void btnAddClick(View view) {
         optr = Operator.add;
         EditText eText = (EditText)findViewById(R.id.resultEdit);
-        data1 = Double.parseDouble(eText.getText().toString()0);
+        data1 = Double.parseDouble(eText.getText().toString());
         eText.setText("");
     }
     public void btnMinusClick(View view) {
