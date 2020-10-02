@@ -9,7 +9,7 @@ import android.widget.EditText;
 
 public class MainActivity extends AppCompatActivity {
 
-    private enum Operator {none, add, minus, muliply, divide}
+    private enum Operator {none, add, minus, multiply, divide}
     private double data1 = 0 , data2 = 0;
     private Operator optr = Operator.none;
 
@@ -71,7 +71,7 @@ public class MainActivity extends AppCompatActivity {
         eText.setText("");
     }
     public void btnMultiplyClick(View view) {
-        optr = Operator.muliply;
+        optr = Operator.multiply;
         EditText eText = (EditText)findViewById(R.id.resultEdit);
         data1 = Double.parseDouble(eText.getText().toString());
         eText.setText("");
@@ -84,8 +84,13 @@ public class MainActivity extends AppCompatActivity {
     }
     public void btnClearClick(View view) {
         EditText eText = (EditText)findViewById(R.id.resultEdit);
+        eText.setText("");
+    }
+    public void btnDotClick(View view) {
+        EditText eText = (EditText)findViewById(R.id.resultEdit);
         eText.setText(eText.getText()+".");
     }
+
     public void btnResultClick(View view){
         if(optr != Operator.none){
             EditText eText = (EditText)findViewById(R.id.resultEdit);
@@ -95,7 +100,7 @@ public class MainActivity extends AppCompatActivity {
                 result = data1+data2;
             } else if (optr == Operator.minus){
                 result = data1-data2;
-            } else if (optr == Operator.muliply){
+            } else if (optr == Operator.multiply){
                 result = data1*data2;
             } else if (optr == Operator.divide){
                 result = data1/data2;
