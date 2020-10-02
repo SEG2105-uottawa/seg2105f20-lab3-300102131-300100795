@@ -97,20 +97,21 @@ public class MainActivity extends AppCompatActivity {
             data2 = Double.parseDouble(eText.getText().toString());
             double result = 0;
             if (optr == Operator.add) {
-                result = data1+data2;
-            } else if (optr == Operator.minus){
-                result = data1-data2;
-            } else if (optr == Operator.multiply){
-                result = data1*data2;
-            } else if (optr == Operator.divide){
-                result = data1/data2;
+                result = data1 + data2;
+            } else if (optr == Operator.minus) {
+                result = data1 - data2;
+            } else if (optr == Operator.multiply) {
+                result = data1 * data2;
+            } else if (optr == Operator.divide) {
+                result = data1 / data2;
             }
             optr = Operator.none;
             data1 = result;
-            if((result-(int)result)!=0)
+            if ((result - (int) result) != 0) {
                 eText.setText(String.valueOf(result));
-            else
+            } else {
                 eText.setText(String.valueOf((int)result));
+            }
         }
     }
 }
